@@ -48,15 +48,18 @@ class PowerSvdCompressor(SvdCompressor, ABC):
         self.epsilon = 1e-8
 
     def _power_svd(self, channel: np.ndarray, duration: float):
+        time_end = time.time() * 1000 + duration
         mu, sigma = 0, 1
         x = np.random.normal(mu, sigma, size=channel.shape[1])
         b = channel.T.dot(channel)
-        time_end = time.time() * 1000 + duration
-        while time.time() * 1000 < time_end:
+        while True:
             new_x = b.dot(x)
             if np.allclose(new_x, x, self.epsilon):
                 break
-            x = new_x
+            x = new_x / np.linalg.norm(new_x)
+            if time.time() * 1000 >= time_end:
+                break
+
         v = x / np.linalg.norm(x)
         sigma = np.linalg.norm(channel.dot(v))
         u = channel.dot(v) / sigma
@@ -68,8 +71,7 @@ class PowerSvdCompressor(SvdCompressor, ABC):
         st = []
         vht = np.zeros((channel.shape[1], 1))
 
-        single_duration = self.duration / k
-        print(single_duration)
+        single_duration = self.duration / rank
 
         for i in range(rank):
             u, sigma, v = self._power_svd(channel, single_duration)
