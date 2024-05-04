@@ -30,8 +30,8 @@
 
 original| numpy                               | power                               | block power                          
 -|-------------------------------------|-------------------------------------|--------------------------------------
-![](source_bmp/gradient/1.bmp)| ![](out_bmp/gradient/1/numpy-5.bmp) | ![](out_bmp/gradient/1/power-5.bmp) | ![](out_bmp/gradient/1/bpower-5.bmp)
-![](source_bmp/gradient/2.bmp)| ![](out_bmp/gradient/2/numpy-5.bmp) | ![](out_bmp/gradient/2/power-5.bmp) | ![](out_bmp/gradient/2/bpower-5.bmp)
+![](source_bmp/gradient/1.bmp)| ![](out_bmp/gradient/1/numpy-5.BMP) | ![](out_bmp/gradient/1/power-5.BMP) | ![](out_bmp/gradient/1/bpower-5.BMP)
+![](source_bmp/gradient/2.bmp)| ![](out_bmp/gradient/2/numpy-5.BMP) | ![](out_bmp/gradient/2/power-5.BMP) | ![](out_bmp/gradient/2/bpower-5.BMP)
 
 Напрашивается закономерный вывод: глаз не чувствует сжатие на градиентах.
 
@@ -40,19 +40,19 @@ original| numpy                               | power                           
 
 original| numpy                               | power                               | block power                          
 -|-------------------------------------|-------------------------------------|--------------------------------------
-![](source_bmp/lines/1.bmp)| ![](out_bmp/lines/1/numpy-5.bmp) | ![](out_bmp/lines/1/power-5.bmp) | ![](out_bmp/lines/1/bpower-5.bmp)
-![](source_bmp/lines/2.bmp)| ![](out_bmp/lines/2/numpy-5.bmp) | ![](out_bmp/lines/2/power-5.bmp) | ![](out_bmp/lines/2/bpower-5.bmp)
+![](source_bmp/lines/1.bmp)| ![](out_bmp/lines/1/numpy-5.BMP) | ![](out_bmp/lines/1/power-5.BMP) | ![](out_bmp/lines/1/bpower-5.BMP)
+![](source_bmp/lines/2.bmp)| ![](out_bmp/lines/2/numpy-5.BMP) | ![](out_bmp/lines/2/power-5.BMP) | ![](out_bmp/lines/2/bpower-5.BMP)
 
 И тут можно заметить, что сжатым изображениям становится не очень хорошо после конвертации обратно в `bmp`. Складывается впечатление, что это происходит из-за резких границ цветов.
 
 ### Контрастные фото
 Проверим предположение, взяв в качестве исходных фото контрастные изображения.
 
-original| numpy                               | power                               | block power                          
--|-------------------------------------|-------------------------------------|--------------------------------------
-![](source_bmp/contrast/1.bmp)| ![](out_bmp/contrast/1/numpy-5.bmp) | ![](out_bmp/contrast/1/power-5.bmp) | ![](out_bmp/contrast/1/bpower-5.bmp)
-![](source_bmp/contrast/2.bmp)| ![](out_bmp/contrast/2/numpy-5.bmp) | ![](out_bmp/contrast/2/power-5.bmp) | ![](out_bmp/contrast/2/bpower-5.bmp)
-![](source_bmp/contrast/3.bmp)| ![](out_bmp/contrast/3/numpy-5.bmp) | ![](out_bmp/contrast/3/power-5.bmp) | ![](out_bmp/contrast/3/bpower-5.bmp)
+original| numpy                               | power                              | block power                          
+-|-------------------------------------|------------------------------------|--------------------------------------
+![](source_bmp/contrast/1.bmp)| ![](out_bmp/contrast/1/numpy-5.BMP) | ![](out_bmp/contrast/1/power-5.BMP) | ![](out_bmp/contrast/1/bpower-5.BMP)
+![](source_bmp/contrast/2.bmp)| ![](out_bmp/contrast/2/numpy-5.BMP) | ![](out_bmp/contrast/2/power-5.BMP) | ![](out_bmp/contrast/2/bpower-5.BMP)
+![](source_bmp/contrast/3.bmp)| ![](out_bmp/contrast/3/numpy-5.BMP) | ![](out_bmp/contrast/3/power-5.BMP)   | ![](out_bmp/contrast/3/bpower-5.BMP)
 
 Складывается впечатление, что так оно и есть, предположение верно, ну почти.
 Третье сравнение наводит на мысль что прямые линии в отличие от кривых сохраняются лучше.
@@ -61,7 +61,7 @@ original| numpy                               | power                           
 
 original| numpy                               | power                               | block power                          
 -|-------------------------------------|-------------------------------------|--------------------------------------
-![](source_bmp/geometry/1.bmp)| ![](out_bmp/geometry/1/numpy-5.bmp) | ![](out_bmp/geometry/1/power-5.bmp) | ![](out_bmp/geometry/1/bpower-5.bmp)
+![](source_bmp/geometry/1.bmp)| ![](out_bmp/geometry/1/numpy-5.BMP) | ![](out_bmp/geometry/1/power-5.BMP) | ![](out_bmp/geometry/1/bpower-5.BMP)
 
 На примере фигур можно заметить, что в местах "без отражений" методы справились с прямыми линиями лучше, особенно это заметно на квадрате.
 ### Ч/б
@@ -70,8 +70,8 @@ original| numpy                               | power                           
 
 original| numpy                               | power                               | block power                          
 -|-------------------------------------|-------------------------------------|--------------------------------------
-![](source_bmp/bw/1.bmp)| ![](out_bmp/bw/1/numpy-5.bmp) | ![](out_bmp/bw/1/power-5.bmp) | ![](out_bmp/bw/1/bpower-5.bmp)
-![](source_bmp/bw/2.bmp)| ![](out_bmp/bw/2/numpy-5.bmp) | ![](out_bmp/bw/2/power-5.bmp) | ![](out_bmp/bw/2/bpower-5.bmp)
+![](source_bmp/bw/1.bmp)| ![](out_bmp/bw/1/numpy-5.BMP) | ![](out_bmp/bw/1/power-5.BMP) | ![](out_bmp/bw/1/bpower-5.BMP)
+![](source_bmp/bw/2.bmp)| ![](out_bmp/bw/2/numpy-5.BMP) | ![](out_bmp/bw/2/power-5.BMP) | ![](out_bmp/bw/2/bpower-5.BMP)
 
 Как ни странно, ситуация примерно такая же как была раньше довольно чётко сохранились в основонм только прямые линии. Небо которое могло выступить в качестве градиента пережило сжатие не так удачно, вероятно из-за высокого разрешения неискусственных фото.
 
